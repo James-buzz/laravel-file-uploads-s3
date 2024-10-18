@@ -4,7 +4,7 @@ This repo showcases a simple, concrete example of how to upload files to Amazon 
 
 Using S3 offers the advantage of offloading file storage to a dedicated service, which can be more cost-effective and scalable than storing files on your own server.
 
-This project utilises Uppy, a JavaScript file uploader that easily integrates into your frontend application.
+This project utilises [Uppy](https://uppy.io), a JavaScript file uploader that easily integrates into your frontend application.
 For handling file uploads on the backend, this project emulates the Uppy Companion server in Laravel.
 
 Credit goes to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-multipart-upload) for providing the original example of this implementation.
