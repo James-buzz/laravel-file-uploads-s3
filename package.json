@@ -6,7 +6,7 @@
 		"start:next": "cd breeze-next && npm run dev",
 		"start:laravel": "cd laravel && php artisan serve",
 		"start:pail": "cd laravel && php artisan pail",
-		"dev": "concurrently -n \"NEXT,LARAVEL,PAIL\" -c \"blue,green,yellow\" \"npm run start:next\" \"npm run start:laravel\" \"npm run start:pail\""
+		"start": "concurrently -n \"NEXT,LARAVEL,PAIL\" -c \"blue,green,yellow\" \"npm run start:next\" \"npm run start:laravel\" \"npm run start:pail\""
 	},
 	"repository": {
 		"type": "git",
