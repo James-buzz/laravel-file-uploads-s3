@@ -35,31 +35,24 @@ jobs:
                   coverage: xdebug
 
             - name: Install dependencies
-              working-directory: ./laravel
               run: composer install --prefer-dist --no-interaction --no-suggest
 
             - name: Create .env file
-              working-directory: ./laravel
               run: cp .env.example .env
 
             - name: Generate Application Key
-              working-directory: ./laravel
               run: php artisan key:generate
 
             - name: Install npm dependencies
-              working-directory: ./laravel
               run: npm install
 
             - name: Build Vite assets
-              working-directory: ./laravel
               run: npm run build
 
             - name: Start dev server in background
-              working-directory: ./laravel
               run: php artisan serve &
 
             - name: Execute tests
-              working-directory: ./laravel
               run: XDEBUG_MODE=coverage vendor/bin/phpunit --log-junit report.xml --coverage-cobertura coverage.xml --coverage-html docs/coverage
               continue-on-error: true
 
