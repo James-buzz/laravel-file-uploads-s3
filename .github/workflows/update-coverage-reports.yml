@@ -1,5 +1,9 @@
 name: "Update Coverage Reports"
 
+defaults:
+    run:
+        working-directory: ./laravel
+
 on:
     push:
         branches:
@@ -24,8 +28,6 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-              with:
-                  path: laravel
 
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
