@@ -1,5 +1,4 @@
 # Laravel File Uploads with S3
-[![Test Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/James-buzz/63f837f639ec90f1b789af69aab0ddd0/raw/minecraftmagic-pre-alpha-cobertura-coverage.json)](https://james-buzz.github.io/laravel-file-uploads-s3/coverage)
 
 This is a simple concrete example on how you can upload files to Amazon S3 using Laravel.
 
