@@ -34,6 +34,12 @@ This command will launch both the Laravel development server and the Next.js dev
 
 You can now access the frontend at: http://localhost:3000
 
+## TODO
+
+- [ ] Add unit tests
+- [ ] Add docker support
+- [ ] Add drivers for different upload types
+
 ## Troubleshooting
 
 - If you encounter CORS issues, check your S3 bucket CORS configuration
