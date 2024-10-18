@@ -1,13 +1,13 @@
 # Laravel File Uploads with S3
 
-This is a simple concrete example on how you can upload files to Amazon S3 using Laravel.
+This repo showcases a simple, concrete example of how to upload files to Amazon S3 using Laravel.
 
-The advantage to using S3 is that it allows you to offload the storage of files to a dedicated service, which can be more cost-effective and scalable than storing files on your server.
+Using S3 offers the advantage of offloading file storage to a dedicated service, which can be more cost-effective and scalable than storing files on your own server.
 
-This project uses the [Uppy](https://uppy.io/) which is a JavaScript file uploader that can be easily integrated into your frontend application.
-To handle the file uploads on the backend, this project emulates the [Uppy Companion](https://uppy.io/docs/companion/) server in Laravel.
+This project utilises Uppy, a JavaScript file uploader that easily integrates into your frontend application.
+For handling file uploads on the backend, this project emulates the Uppy Companion server in Laravel.
 
-Credits to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-multipart-upload) for an example of how to do this originally.
+Credit goes to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-multipart-upload) for providing the original example of this implementation.
 
 ## Project Structure
 
@@ -18,11 +18,11 @@ This project is split into two main directories:
 
 ## Getting Started
 
-For detailed setup instructions, please refer to the [Getting started guide](.docs/getting-started.md) file.
+To get started and running this project locally, please follow the [Getting started guide](.docs/getting-started.md) file first.
 
-## Running the Local Development Environment
+## Starting the Project
 
-After following the getting started guide in [Getting started guide](.docs/getting-started.md), you can run the local development environment by following these steps:
+Once you have setup your local environment, you can run the project locally by following these steps:
 
 1. Navigate to the project directory.
 2. Run the following command to start both the Laravel backend and Next.js frontend:
