@@ -1,0 +1,82 @@
+name: "Update Coverage Reports"
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: "pages"
+    cancel-in-progress: true
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        timeout-minutes: 5
+        name: Run Test
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  path: laravel
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.2
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, iconv, fileinfo
+                  coverage: xdebug
+
+            - name: Install dependencies
+              working-directory: ./laravel
+              run: composer install --prefer-dist --no-interaction --no-suggest
+
+            - name: Create .env file
+              working-directory: ./laravel
+              run: cp .env.example .env
+
+            - name: Generate Application Key
+              working-directory: ./laravel
+              run: php artisan key:generate
+
+            - name: Install npm dependencies
+              working-directory: ./laravel
+              run: npm install
+
+            - name: Build Vite assets
+              working-directory: ./laravel
+              run: npm run build
+
+            - name: Start dev server in background
+              working-directory: ./laravel
+              run: php artisan serve &
+
+            - name: Execute tests
+              working-directory: ./laravel
+              run: XDEBUG_MODE=coverage vendor/bin/phpunit --log-junit report.xml --coverage-cobertura coverage.xml --coverage-html docs/coverage
+              continue-on-error: true
+
+            - name: Create coverage badge image
+              uses: gaelgirodon/ci-badges-action@v1
+              with:
+                  gist-id: c79d2fc0052bd4cdd90e53be555e9db6
+                  token: ${{ secrets.GIST_TOKEN }}
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v5
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: './docs'
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
