@@ -26,9 +26,10 @@ Once you have setup your local environment, you can run the project locally by f
 
 1. Navigate to the project directory.
 2. Run the following command to start both the Laravel backend and Next.js frontend:
-   ```
-   npm run start
-   ```
+
+```bash
+npm run start
+```
 
 This command will launch both the Laravel development server and the Next.js development server concurrently.
 
