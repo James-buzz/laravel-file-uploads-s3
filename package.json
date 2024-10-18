@@ -1,23 +1,24 @@
 {
-  "name": "laravel-file-uploads-s3",
-  "version": "1.0.0",
-  "description": "Concrete example how to do file uploads to S3 in Laravel",
-  "scripts": {
-    "start:next": "cd breeze-next && npm run dev",
-    "start:laravel": "php artisan serve",
-    "dev": "concurrently -n \"NEXT,LARAVEL\" -c \"blue,green\" \"npm run start:next\" \"npm run start:laravel\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/James-buzz/laravel-file-uploads-s3.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/James-buzz/laravel-file-uploads-s3/issues"
-  },
-  "homepage": "https://github.com/James-buzz/laravel-file-uploads-s3#readme",
-  "devDependencies": {
-    "concurrently": "^9.0.1"
-  }
+	"name": "laravel-file-uploads-s3",
+	"version": "1.0.0",
+	"description": "Concrete example how to do file uploads to S3 in Laravel",
+	"scripts": {
+		"start:next": "cd breeze-next && npm run dev",
+		"start:laravel": "cd laravel && php artisan serve",
+		"start:pail": "cd laravel && php artisan pail",
+		"dev": "concurrently -n \"NEXT,LARAVEL,PAIL\" -c \"blue,green,yellow\" \"npm run start:next\" \"npm run start:laravel\" \"npm run start:pail\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/James-buzz/laravel-file-uploads-s3.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/James-buzz/laravel-file-uploads-s3/issues"
+	},
+	"homepage": "https://github.com/James-buzz/laravel-file-uploads-s3#readme",
+	"devDependencies": {
+		"concurrently": "^9.0.1"
+	}
 }

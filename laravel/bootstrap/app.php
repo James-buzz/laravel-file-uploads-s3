@@ -20,7 +20,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         ]);
 
-        //
+        // Bypass CSRF token validation for companion uploads
+        $middleware->validateCsrfTokens(except: [
+            'companion/s3/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
