@@ -18,7 +18,7 @@ This project is split into two main directories:
 
 ## Getting Started
 
-To get started and running this project locally, please follow the [Getting started guide](.docs/getting-started.md) file first.
+To get started and running this project locally, please follow the [Getting started guide](.docs/getting-started.md) first.
 
 ## Starting the Project
 

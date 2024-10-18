@@ -83,7 +83,7 @@ After completing both the Laravel and Next.js setup:
 
 2. You're now ready to run the application locally. Use the following command in the root directory to start both the Laravel and Next.js applications:
    ```
-   npm run dev
+   npm run start
    ```
 
 This command will launch both the Laravel development server and the Next.js development server concurrently.
