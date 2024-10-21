@@ -55,6 +55,11 @@ Ensure you have the following installed:
    UPPY_COMPANION_DISK=s3
    UPPY_COMPANION_BUCKET=yourbucket
    ```
+   
+8. Clear the Laravel config:
+   ```
+   php artisan config:clear
+   ```
 
 ## Next.js (Frontend) Setup
 
@@ -65,12 +70,7 @@ Ensure you have the following installed:
    cp .env.example .env
    ```
 
-3. Open the `.env` file and update it with your backend URL:
-   ```
-   NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
-   ```
-
-4. Install the Node.js dependencies:
+3. Install the Node.js dependencies:
    ```
    npm install
    ```
@@ -80,8 +80,16 @@ Ensure you have the following installed:
 After completing both the Laravel and Next.js setup:
 
 1. Navigate back to the root directory of the project.
+   ```
+   cd ..
+   ```
+   
+2. Install the root dependencies:
+   ```
+   npm install
+   ```
 
-2. You're now ready to run the application locally. Use the following command in the root directory to start both the Laravel and Next.js applications:
+3. You're now ready to run the application locally. Use the following command in the root directory to start both the Laravel and Next.js applications:
    ```
    npm run start
    ```

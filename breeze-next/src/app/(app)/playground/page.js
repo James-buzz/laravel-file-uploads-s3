@@ -1,17 +1,16 @@
 import Header from '@/app/(app)/Header'
-import AlbumsComponent from '@/components/Album/Albums'
 
 export const metadata = {
-    title: 'Dashboard',
+    title: 'Playground',
 }
 
-export default function Albums() {
+export default function Playground() {
     return (
         <>
-            <Header title="Dashboard" />
+            <Header title="Playground" />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    Hello there.
+                    There's nothing here yet.
                 </div>
             </div>
         </>
