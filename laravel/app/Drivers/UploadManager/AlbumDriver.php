@@ -5,6 +5,7 @@ namespace App\Drivers\UploadManager;
 
 use App\Contracts\IUploadDriver;
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 
@@ -41,8 +42,15 @@ class AlbumDriver implements IUploadDriver
         return 'album/' . $fileMetadata['album_id'] . '/' . $originalFileName;
     }
 
-    public function onUploadComplete(array $fileMetadata): void
+    public function onUploadComplete(string $fileKey, array $fileMetadata): void
     {
-        // Do nothing
+        $albumId = $fileMetadata['album_id'];
+        $fileName = $fileMetadata['file_name'] ?? 'unknown';
+
+        $photo = new Photo();
+        $photo->display_name = $fileName;
+        $photo->file_path = $fileKey;
+        $photo->album_id = $albumId;
+        $photo->save();
     }
 }

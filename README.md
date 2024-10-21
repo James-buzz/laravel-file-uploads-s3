@@ -13,8 +13,8 @@ Credit goes to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-mult
 
 There are two examples of file uploads in this project:
 
-1. Photo Album - 
-2. Playground - 
+1. Photo Album - Upload photos to an album. See `/laravel/app/Drivers/AlbumDriver` as a starting point.
+2. Playground - TODO.
 
 Both are accessible from the main page of application when logged in.
 

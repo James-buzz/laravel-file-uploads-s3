@@ -21,21 +21,26 @@ class CompleteMultipartController extends Controller
      */
     public function post(CompleteMultipartRequest $request, string $uploadId): JsonResponse {
         $validated = $request->validated();
+        $validatedMetadata = $validated['metadata'];
 
-        $uploadType = $validated['metadata']['upload_type'];
+        $unvalidatedMetadata = $request->input('metadata');
+
+        $uploadType = $validatedMetadata['upload_type'];
 
         $driver = $this->uploadManager->driver($uploadType);
         if ($driver === null) {
             abort(404, 'Upload driver not found');
         }
 
+        $key = $validated['key'];
+
         $response = $this->uppyCompanionService->completeMultipartUpload(
-            $this->encodeURIComponent($validated['key']),
+            $this->encodeURIComponent($key),
             $this->encodeURIComponent($uploadId),
             $validated['parts']
         );
 
-        $driver->onUploadComplete($validated['metadata']);
+        $driver->onUploadComplete($key, $unvalidatedMetadata);
 
         Log::debug("Complete Multipart Upload [" . $validated['key'] . "]");
 

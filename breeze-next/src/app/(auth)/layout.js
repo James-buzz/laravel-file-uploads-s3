@@ -15,7 +15,8 @@ const Layout = ({ children }) => {
                         <Link href="/">
                             <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
                         </Link>
-                    }>
+                    }
+                >
                     {children}
                 </AuthCard>
             </div>

@@ -1,5 +1,4 @@
 import Header from '@/app/(app)/Header'
-import AlbumsComponent from '@/components/Album/Albums'
 
 export const metadata = {
     title: 'Dashboard',

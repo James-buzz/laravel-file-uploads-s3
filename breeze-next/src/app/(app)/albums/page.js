@@ -11,7 +11,7 @@ export default function Albums() {
             <Header title="Albums" />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <AlbumsComponent/>
+                    <AlbumsComponent />
                 </div>
             </div>
         </>
