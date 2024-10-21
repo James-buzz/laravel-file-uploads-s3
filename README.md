@@ -33,6 +33,7 @@ To get started, follow the guides below:
 - [x] Add drivers for different upload types
 - [ ] Add unit tests
 - [ ] Add docker support
+- [ ] Enable direct uploads
 
 
 ## Contributing
