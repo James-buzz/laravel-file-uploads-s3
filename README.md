@@ -25,8 +25,8 @@ Both are accessible from the main page of application when logged in.
 
 To get started, follow the guides below:
 
-- 🔧 [How Uppy works with S3](./docs/how-it-works.md)
-- 🏁 [Setting up Local development](./docs/getting-started.md)
+- 🔧 [How Uppy works with S3](.docs/how-it-works.md)
+- 🏁 [Setting up Local development](.docs/getting-started.md)
 
 ## TODO
 
