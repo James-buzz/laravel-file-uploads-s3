@@ -11,59 +11,29 @@ Credit goes to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-mult
 
 ## Project
 
-There are two examples of file uploads in this project:
+The project uses React for the frontend and Laravel for the backend.
+Laravel Sanctum is used for authentication.
 
-1. Photo Album - Upload photos to an album. See `/laravel/app/Drivers/AlbumDriver` as a starting point.
-2. Playground - TODO.
+To showcase file uploads in this project, we have created two examples:
+
+1. Photo Album - Upload photos to an album.
+2. Playground.
 
 Both are accessible from the main page of application when logged in.
 
-## Project Structure
+## Getting started
 
-This project is split into two main directories:
+To get started, follow the guides below:
 
-1. `/laravel` - The backend laravel application.
-2. `/breeze-next` - The frontend Next.js application.
-
-## How it works
-
-Uppy and AWS-S3 uploads have two methods of uploading files:
-
-1. Direct Upload - The file is uploaded directly to S3 from the client.
-2. Multipart Upload - The file is broken down into parts and uploaded to S3 in chunks.
-
-If you want to understand more or have never worked with S3 before, I recommended reading this page:
-
-## Getting Started
-
-To get started and running this project locally, please follow the [Getting started guide](.docs/getting-started.md) first.
-
-## Starting the Project
-
-Once you have setup your local environment, you can run the project locally by following these steps:
-
-1. Navigate to the project directory.
-2. Run the following command to start both the Laravel backend and Next.js frontend:
-
-```bash
-npm run start
-```
-
-This command will launch both the Laravel development server and the Next.js development server concurrently.
-
-You can now access the frontend at: http://localhost:3000
+- 🔧 [How Uppy works with S3](./docs/how-it-works.md)
+- 🏁 [Setting up Local development](./docs/getting-started.md)
 
 ## TODO
 
+- [x] Add drivers for different upload types
 - [ ] Add unit tests
 - [ ] Add docker support
-- [x] Add drivers for different upload types
 
-## Troubleshooting
-
-- If you encounter CORS issues, check your S3 bucket CORS configuration
-- Ensure all environment variables are correctly set in both `.env` files
-- Check Laravel logs (`storage/logs/laravel.log`) for backend errors
 
 ## Contributing
 

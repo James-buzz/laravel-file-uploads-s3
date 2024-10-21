@@ -10,6 +10,13 @@ Ensure you have the following installed:
 - Node.js 16.13 or higher
 - An Amazon S3 account and bucket
 
+## Directory Structure
+
+This project is split into two main directories:
+
+1. `/laravel` - The backend laravel application.
+2. `/breeze-next` - The frontend Next.js application.
+
 ## S3 Configuration
 
 1. Create an S3 bucket in your AWS account if you haven't already.
@@ -55,7 +62,7 @@ Ensure you have the following installed:
    UPPY_COMPANION_DISK=s3
    UPPY_COMPANION_BUCKET=yourbucket
    ```
-   
+
 8. Clear the Laravel config:
    ```
    php artisan config:clear
@@ -83,7 +90,7 @@ After completing both the Laravel and Next.js setup:
    ```
    cd ..
    ```
-   
+
 2. Install the root dependencies:
    ```
    npm install
@@ -97,3 +104,10 @@ After completing both the Laravel and Next.js setup:
 This command will launch both the Laravel development server and the Next.js development server concurrently.
 
 You should now be able to access the frontend application at http://localhost:3000 and start using the file upload functionality.
+
+
+## Troubleshooting
+
+- If you encounter CORS issues, check your S3 bucket CORS configuration
+- Ensure all environment variables are correctly set in both `.env` files
+- Check Laravel logs (`storage/logs/laravel.log`) for backend errors

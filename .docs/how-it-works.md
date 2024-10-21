@@ -1,4 +1,4 @@
-# AWS S3 Upload Methods with Uppy
+# How Uppy Works with Amazon S3
 
 When using Uppy for file uploads to Amazon S3, there are two primary methods:
 
