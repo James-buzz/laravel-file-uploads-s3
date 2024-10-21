@@ -46,7 +46,7 @@ const Album = () => {
                             key={photo.id}
                             className="bg-white shadow-lg rounded-lg overflow-hidden"
                         >
-                            <Image
+                            <img
                                 src={photo.url}
                                 alt={photo.display_name}
                                 className="w-full h-48 object-cover"
