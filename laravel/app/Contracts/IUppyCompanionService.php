@@ -13,6 +13,18 @@ use Aws\Result;
 interface IUppyCompanionService
 {
     /**
+     * Returns a presigned URL for uploading a file to S3.
+     *
+     * @param  string  $uploadKey
+     * @param  string  $type
+     * @return array{url: string, fields: array, headers: array}
+     */
+    public function getPresignedUrl(
+        string $uploadKey,
+        string $type,
+    ): array;
+
+    /**
      * Initiates a multipart upload via S3 and returns the upload ID.
      *
      * @param string $fileName The name of the file

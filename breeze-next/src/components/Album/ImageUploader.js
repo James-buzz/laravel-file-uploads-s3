@@ -22,9 +22,8 @@ const ImageUploader = ({ onSuccess, albumId }) => {
 
         uppy.use(AxiosAwsS3Plugin, {
             endpoint: process.env.NEXT_PUBLIC_BACKEND_UPPY_URL,
-            shouldUseMultipart() {
-                return true
-            },
+			// TODO: Direct uploads not enabled for now.
+			shouldUseMultipart: () => false,
         })
 
         uppy.on('file-added', file => {

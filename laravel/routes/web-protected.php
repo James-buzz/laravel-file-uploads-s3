@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\Uppy\ParamsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Uppy\MultipartController;
 use App\Http\Controllers\Uppy\SignpartController;
@@ -13,6 +14,8 @@ use App\Http\Controllers\Uppy\CompleteMultipartController;
 
 // Uploader
 Route::group(['middleware' => 'auth:sanctum'], function() {
+    Route::post('companion/s3/params', [ParamsController::class, 'index']);
+
     Route::options('companion/s3/multipart', [MultipartController::class, 'options']);
     Route::resource('companion/s3/multipart', MultipartController::class)->only([
         'store', 'show', 'destroy'

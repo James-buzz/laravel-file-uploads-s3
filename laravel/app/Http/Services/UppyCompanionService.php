@@ -18,6 +18,26 @@ class UppyCompanionService implements IUppyCompanionService {
         protected readonly string $s3Bucket,
     ) {}
 
+    public function getPresignedUrl(
+        string $uploadKey,
+        string $type,
+    ): array
+    {
+        $command = $this->s3Client->getCommand('PutObject', [
+            'Bucket' => $this->s3Bucket,
+            'Key' => $uploadKey,
+            'ContentType' => $type,
+        ]);
+
+        $presignedRequest = $this->s3Client->createPresignedRequest($command, self::DEFAULT_EXPIRY);
+
+        return [
+            'url' => (string) $presignedRequest->getUri(),
+            'fields' => [],
+            'headers' => $presignedRequest->getHeaders(),
+        ];
+    }
+
     public function createMultipartUpload(
         string $fileName,
         string $type,

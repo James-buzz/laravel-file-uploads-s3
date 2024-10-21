@@ -6,6 +6,24 @@ import axios from '@/lib/axios'
  * This is because Axios.js is already configured with the necessary headers and interceptors for Laravel Sanctum.
  */
 export default class AxiosAwsS3Plugin extends AwsS3 {
+	getUploadParameters(file, options){
+		return axios
+			.post('/companion/s3/params', {
+				filename: file.name,
+				type: file.type,
+				metadata: file.meta,
+			}, {
+				signal: options.signal,
+			})
+			.then(response => {
+				return {
+					method: 'PUT',
+					url: response.data.url,
+					fields: response.data.fields,
+					headers: response.data.headers,
+				}
+			})
+	}
     createMultipartUpload(file, signal) {
         return axios
             .post(
