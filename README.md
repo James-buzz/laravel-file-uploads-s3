@@ -25,6 +25,15 @@ This project is split into two main directories:
 1. `/laravel` - The backend laravel application.
 2. `/breeze-next` - The frontend Next.js application.
 
+## How it works
+
+Uppy and AWS-S3 uploads have two methods of uploading files:
+
+1. Direct Upload - The file is uploaded directly to S3 from the client.
+2. Multipart Upload - The file is broken down into parts and uploaded to S3 in chunks.
+
+If you want to understand more or have never worked with S3 before, I recommended reading this page:
+
 ## Getting Started
 
 To get started and running this project locally, please follow the [Getting started guide](.docs/getting-started.md) first.
