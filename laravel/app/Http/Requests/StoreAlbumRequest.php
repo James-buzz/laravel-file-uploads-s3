@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Uppy;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompleteMultipartRequest extends FormRequest
+class StoreAlbumRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class CompleteMultipartRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'key' => 'required|string|max:1024',
-            'parts' => 'required|array',
-            'metadata' => 'required|array',
-            'metadata.upload_type' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
         ];
     }
 }

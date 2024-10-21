@@ -9,6 +9,15 @@ For handling file uploads on the backend, this project emulates the Uppy Compani
 
 Credit goes to [TappNetwork](https://github.com/TappNetwork/laravel-uppy-s3-multipart-upload) for providing the original example of this implementation.
 
+## Project
+
+There are two examples of file uploads in this project:
+
+1. Photo Album - Upload photos to an album. See `/laravel/app/Drivers/AlbumDriver` as a starting point.
+2. Playground - TODO.
+
+Both are accessible from the main page of application when logged in.
+
 ## Project Structure
 
 This project is split into two main directories:

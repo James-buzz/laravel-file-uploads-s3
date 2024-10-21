@@ -30,9 +30,11 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->string('password')),
-            // temporary hack
-            'email_verified_at' => now(),
         ]);
+
+        // Temporary fix for the email verification
+        $user->email_verified_at = now();
+        $user->save();
 
         event(new Registered($user));
 

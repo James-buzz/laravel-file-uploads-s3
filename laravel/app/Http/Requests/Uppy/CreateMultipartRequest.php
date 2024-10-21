@@ -24,7 +24,8 @@ class CreateMultipartRequest extends FormRequest
         return [
             'filename' => 'required|string|max:255',
             'type' => 'required|string|max:255',
-            'metadata' => 'array|nullable',
+            'metadata' => 'required|array',
+            'metadata.upload_type' => 'required|string|max:255',
         ];
     }
 }
