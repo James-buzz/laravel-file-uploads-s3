@@ -48,7 +48,7 @@ You can now access the frontend at: http://localhost:3000
 
 - [ ] Add unit tests
 - [ ] Add docker support
-- [ ] Add drivers for different upload types
+- [x] Add drivers for different upload types
 
 ## Troubleshooting
 
