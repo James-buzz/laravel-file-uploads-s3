@@ -22,8 +22,8 @@ const ImageUploader = ({ onSuccess, albumId }) => {
 
         uppy.use(AxiosAwsS3Plugin, {
             endpoint: process.env.NEXT_PUBLIC_BACKEND_UPPY_URL,
-			// TODO: Direct uploads not enabled for now.
-			shouldUseMultipart: () => false,
+			// TODO: Direct uploads not enabled for now. Is possible but needs post backend endpoint to acknowledge upload is complete.
+			shouldUseMultipart: () => true,
         })
 
         uppy.on('file-added', file => {
